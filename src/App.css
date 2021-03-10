@@ -1,38 +1,179 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+:root {
+  --primary: #086981;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*Utility class*/
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: linear-gradient(
+    to right top,
+    #8492ed,
+    #c176d8,
+    #ed52a8,
+    #fd3a65,
+    #eb4b12
+  );
+  padding: 10px 25px;
+  border-radius: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #5ba1e1,
+    #7e9fef,
+    #a799f4,
+    #d291ef,
+    #f986e0
+  );
+  color: black;
+  padding: 20px 20px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+button:focus {
+  outline: 0;
+}
+.container h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3em;
+  letter-spacing: 2px;
+}
+.line {
+  margin-top: 20px;
+  width: 10%;
+  height: 5px;
+  background-color: var(--primary);
+  margin: auto;
+  border-radius: 10px;
+}
+
+.categories {
+  text-align: center;
+  margin-top: 40px;
+}
+
+button {
+  font-size: 1.5em;
+  padding: 8px 16px;
+  margin-right: 15px;
+  border: 0;
+  background: transparent;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  background: var(--primary);
+  border-radius: 10px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+main {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, auto));
+  grid-auto-rows: minmax(200px, 200px);
+  gap: 40px 40px;
+}
+.meal {
+  align-items: flex-start;
+  max-width: 40rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-auto-rows: minmax(200px, 400px);
+  gap: 0px 20px;
+}
+.meal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  margin-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.top {
+  justify-content: space-between;
+  border-bottom: 2px dotted #000000;
+  margin-bottom: 22px;
+}
+.top h3 {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.info > p {
+  color: #333;
+}
+
+@media (max-width: 970px) {
+  main {
+    grid-auto-rows: minmax(200px, 320px);
   }
-  to {
-    transform: rotate(360deg);
+  .meal img {
+    width: 100%;
+    height: 55%;
+  }
+}
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    row-gap: 70px;
+  }
+  .meal img {
+    width: 100%;
+    height: 55%;
+  }
+  .container h2 {
+    margin-top: -25px;
+    font-size: 2em;
+    letter-spacing: 2.5px;
+  }
+
+  button {
+    font-size: 1.2em;
+    padding: 5px 8px;
+    margin-right: 5px;
+  }
+  .categories {
+    margin-top: 15px;
+  }
+  .line {
+    width: 25%;
+    height: 4px;
+  }
+  main {
+    margin-top: 20px;
+  }
+  body {
+    padding: 50px 20px;
   }
 }
