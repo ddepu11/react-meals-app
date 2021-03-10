@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="container">
-      <h2>Our Menu</h2>
+      <h2>Todays Meals</h2>
       <div className="line"></div>
       <div className="categories">
         <ul>
