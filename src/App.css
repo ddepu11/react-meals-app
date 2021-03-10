@@ -146,7 +146,7 @@ main {
 @media (max-width: 600px) {
   main {
     grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-    row-gap: 70px;
+    row-gap: 50px;
   }
   .meal img {
     width: 100%;

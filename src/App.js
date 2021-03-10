@@ -3,14 +3,13 @@ import "./App.css";
 import Categories from "./components/Categories";
 import meals from "./data";
 
+const allCategories = new Set(meals.map((item) => item.category));
+console.log(allCategories);
+
 function App() {
   const [mealsArr, setMealsArr] = useState([]);
 
-  const [categories, setCategories] = useState([
-    "breakfast",
-    "lunch",
-    "shakes",
-  ]);
+  const [categories, setCategories] = useState(["All", ...allCategories]);
 
   useEffect(() => {
     setMealsArr(meals);
@@ -31,7 +30,6 @@ function App() {
       <div className="line"></div>
       <div className="categories">
         <ul>
-          <button onClick={handleClick}>All</button>
           {categories.map((item, index) => (
             <Categories key={index} text={item} handleClick={handleClick} />
           ))}
